@@ -14,9 +14,10 @@ const start = async () => {
   await app.register(routes)
 
   const PORT: number = Number(env.PORT) || 3000;
-  
+  const HOST: string = env.HOST || '0.0.0.0'
+
   try {
-    await app.listen({ port: PORT })
+    await app.listen({ port: PORT, host: HOST })
   } catch (err) {
     app.log.error(err)
     process.exit(1)
