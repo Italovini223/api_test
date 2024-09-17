@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model bi_ads_data {
+  bi_ads_data_id Int @id @default(autoincrement())
+  bi_ads_data_dtc   DateTime
+  bi_ads_data_dta DateTime
+  bi_ads_token_id Int
+  os_clientes_id Int
+  bi_ads_provedor_id Int
+  bi_ads_data_date_start DateTime
+  bi_ads_data_date_stop DateTime
+  bi_ads_data_campaign_id Int
+  bi_ads_data_campaign_spend Float
+  bi_ads_data_impressions Int
+  bi_ads_data_clicks Int
+  bi_ads_data_cpc Float
+  bi_ads_data_ctr Float
+}
+
+
